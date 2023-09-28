@@ -4,5 +4,7 @@ This repo contains code to my article on how to implement Json Web Authenticatio
 
 ## Requirements
 
-- Nodejs
-- Mongodb
+- [Nodejs](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [Mongodb](https://www.mongodb.com/) is an open source NoSQL database management program.
+- [Express](https://expressjs.com/) is a fast, unopinionated, minimalist web framework for Node.js
+- [Passport](https://www.passportjs.org/) is a simple, unobtrusive authentication middleware for Node.js
