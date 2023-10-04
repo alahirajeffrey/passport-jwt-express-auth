@@ -31,19 +31,20 @@ authRouter.post("/login", async (req, res, next) => {
       return res.status(400).json({ message: "user does not exist" });
 
     // check if password is correct
-    if (userExists.password !== req.body.passord)
-      return res.staus(400).json({ message: "incorrect password" });
+    if (userExists.password !== req.body.password)
+      return res.status(400).json({ message: "incorrect password" });
 
     // generate acces token
-    const accessToken = jwt
-      .sign(
-        {
-          id: userExists._id,
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: "1d" }
-      )
-      .return(200)
+    const accessToken = jwt.sign(
+      {
+        id: userExists._id,
+      },
+      "secret",
+      { expiresIn: "1d" }
+    );
+
+    return res
+      .status(200)
       .json({ message: "user logged in", accessToken: accessToken });
   } catch (error) {
     console.log(error);
