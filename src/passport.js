@@ -4,7 +4,7 @@ import UserModel from "./model.js";
 
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET || "hello",
+  secretOrKey: "secret",
 };
 
 passport.use(
